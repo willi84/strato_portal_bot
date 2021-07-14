@@ -8,7 +8,7 @@ const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
 
 module.exports = async function (req, res) {
 	try {
-    const baseUrl = `${req.protocol}://${req.headers.host}`;
+    const baseUrl = `${req.headers.protocol}://${req.headers.host}:${req.headers.port}`;
 		res.send('OK: ' +  baseUrl);
     console.log(baseUrl);
 // 		res.statusCode = 200
