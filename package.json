@@ -4,17 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start:local": "ngrok http 3000"
+    "start": "micro-bot",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "ngrok": "^3.4.1"
-  },
+  "devDependencies": {},
   "dependencies": {
-    "node-telegram-bot-api": "^0.51.0",
-    "telegraf": "^4.4.0"
+    "micro-bot": "^2.5.3"
   }
 }
