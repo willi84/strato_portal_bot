@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "micro-bot  -t $TELEGRAM_TOKEN  api/index.js",
-    "start2": "micro-bot  -t $TELEGRAM_TOKEN -d vercel.app api/index.js",
+    "start1": "micro-bot  -t $TELEGRAM_TOKEN  api/index.js",
+    "start": "micro-bot  -t $TELEGRAM_TOKEN -d strato-portal-bot.vercel.app api/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
