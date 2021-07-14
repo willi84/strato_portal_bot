@@ -26,6 +26,15 @@ module.exports = async function (req, res) {
 // 		console.error(e.message)
 	}
 };
+bot.start((ctx) => ctx.reply('Welcome'));
+bot.launch({
+  webhook: {
+    host: 'strato-portal-bot.vercel.app',
+//     port: 443
+  }
+})
+process.once('SIGINT', () => bot.stop('SIGINT'))
+process.once('SIGTERM', () => bot.stop('SIGTERM'))
 
 // bot.command('start', ctx => {
     //     console.log(ctx.from)
