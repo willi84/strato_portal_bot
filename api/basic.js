@@ -25,7 +25,7 @@ const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
 
         bot.launch({
             webhook: {
-              domain: 'https://strato-portal-bot.vercel.app/',
+              domain: 'https://strato-portal-bot.vercel.app',
             //   port: 8080
             }
           })
