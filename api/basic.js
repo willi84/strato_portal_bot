@@ -17,23 +17,41 @@ const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
         
         // console.log(bot);
         bot.start((ctx) => ctx.reply('Welcome'))
-        bot.help((ctx) => ctx.reply('Send me a sticker'))
-        bot.on('sticker', (ctx) => ctx.reply('👍'))
-        bot.hears('hi', (ctx) => ctx.reply('Hey there'))
-        // bot.startWebhook('/secret-path', null, 5000)
-        // bot.launch()
+        bot.command('image', (ctx) => ctx.replyWithPhoto({ url: 'https://picsum.photos/200/300/?random' }))
+bot.on('text', (ctx) => ctx.replyWithHTML('<b>Hello</b>'))
 
-        bot.launch({
-            webhook: {
-              domain: 'https://strato-portal-bot.vercel.app',
-              port: 8080
-            }
-          })
+// Start webhook directly
+// bot.startWebhook('/secret-path', null, 3000)
+// bot.telegram.setWebhook('https://---.localtunnel.me/secret-path')
+
+// Start webhook via launch method (preferred)
+bot.launch({
+  webhook: {
+    domain: 'https://strato-portal-bot.vercel.app',
+    port: 443
+  }
+})
+
+// Enable graceful stop
+process.once('SIGINT', () => bot.stop('SIGINT'))
+process.once('SIGTERM', () => bot.stop('SIGTERM'))
+        // bot.help((ctx) => ctx.reply('Send me a sticker'))
+        // bot.on('sticker', (ctx) => ctx.reply('👍'))
+        // bot.hears('hi', (ctx) => ctx.reply('Hey there'))
+        // // bot.startWebhook('/secret-path', null, 5000)
+        // // bot.launch()
+
+        // bot.launch({
+        //     webhook: {
+        //       domain: 'https://strato-portal-bot.vercel.app',
+        //       port: 8080
+        //     }
+        //   })
           
         
         // Enable graceful stop
-        process.once('SIGINT', () => bot.stop('SIGINT'))
-        process.once('SIGTERM', () => bot.stop('SIGTERM'))
+        // process.once('SIGINT', () => bot.stop('SIGINT'))
+        // process.once('SIGTERM', () => bot.stop('SIGTERM'))
         
         
 // bot.context.db = {
