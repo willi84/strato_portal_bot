@@ -1,23 +1,28 @@
 const { Telegraf } = require('telegraf')
 
 // console.log(process.env.TELEGRAM_TOKEN);
-if(process.env.TELEGRAM_TOKEN){
-    console.log('token found');
-}
-const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
+// if(process.env.TELEGRAM_TOKEN){
+//     console.log('token found');
+// }
+// const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
 
 module.exports = async function (req, res) {
+    console.log(Object.keys(req));
+    console.log(Object.keys(req.headers));
+    console.log(req.url);
+    console.log(req.headers.host);
+    console.log(req.headers['x-forwarded-host']);
+    console.log(req.headers['x-forwarded-port']);
 	try {
-//     const baseUrl = `${req.headers.protocol}://${req.headers.host}:${req.headers.port}`;
-		res.send('OK: ' +  Object.keys(req) + ' --- ' +  Object.keys(req.headers)) ;
-    console.log(baseUrl);
-// 		res.statusCode = 200
-// 		res.end('')
+// //     const baseUrl = `${req.headers.protocol}://${req.headers.host}:${req.headers.port}`;
+// 		res.send('OK: ') ;
+// // 		res.statusCode = 200
+// // 		res.end('')
 	} catch (e) {
-		res.statusCode = 500
-		res.setHeader('Content-Type', 'text/html')
-		res.end('<h1>Server Error</h1><p>Sorry, there was a problem</p>')
-		console.error(e.message)
+// 		res.statusCode = 500
+// 		res.setHeader('Content-Type', 'text/html')
+// 		res.end('<h1>Server Error</h1><p>Sorry, there was a problem</p>')
+// 		console.error(e.message)
 	}
 };
 
