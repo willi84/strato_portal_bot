@@ -35,6 +35,7 @@ vercel login <youremail@mail.com>
 
 ## credits
 * https://github.com/MarcL/telegram-test-bot
+* https://www.marclittlemore.com/serverless-telegram-chatbot-vercel/
 
 
 
