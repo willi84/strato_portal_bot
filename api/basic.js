@@ -1,10 +1,10 @@
 const { Telegraf } = require('telegraf')
 
 // console.log(process.env.TELEGRAM_TOKEN);
-// if(process.env.TELEGRAM_TOKEN){
-//     console.log('token found');
-// }
-// const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
+if(process.env.TELEGRAM_TOKEN){
+    console.log('token found');
+}
+const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
 
 module.exports = async function (req, res) {
     var response = '';
