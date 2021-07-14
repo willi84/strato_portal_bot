@@ -1,1 +1,1 @@
-module.exports = ({ reply }) => reply('42')
+module.exports = ({ reply }) => reply('44')
