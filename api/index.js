@@ -1,3 +1,3 @@
 process.env.NTBA_FIX_319 = 'test';
-console.log('success');
-// module.exports = ({ reply }) => reply('44')
+const { mount, reply } = require('micro-bot')
+module.exports = mount('sticker', reply('👍'))
