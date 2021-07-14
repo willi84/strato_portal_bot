@@ -1,2 +1,3 @@
 process.env.NTBA_FIX_319 = 'test';
-module.exports = ({ reply }) => reply('44')
+console.log('success');
+// module.exports = ({ reply }) => reply('44')
