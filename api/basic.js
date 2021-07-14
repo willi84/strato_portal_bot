@@ -27,8 +27,8 @@ bot.on('text', (ctx) => ctx.replyWithHTML('<b>Hello</b>'))
 // Start webhook via launch method (preferred)
 bot.launch({
   webhook: {
-    domain: 'https://strato-portal-bot.vercel.app',
-    port: 443
+    host: 'https://strato-portal-bot.vercel.app',
+//     port: 443
   }
 })
 
