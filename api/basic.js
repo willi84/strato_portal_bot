@@ -20,8 +20,16 @@ const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
         bot.help((ctx) => ctx.reply('Send me a sticker'))
         bot.on('sticker', (ctx) => ctx.reply('👍'))
         bot.hears('hi', (ctx) => ctx.reply('Hey there'))
-        bot.startWebhook('/secret-path', null, 5000)
+        // bot.startWebhook('/secret-path', null, 5000)
         // bot.launch()
+
+        bot.launch({
+            webhook: {
+              domain: 'https://strato-portal-bot.vercel.app/',
+            //   port: 8080
+            }
+          })
+          
         
         // Enable graceful stop
         process.once('SIGINT', () => bot.stop('SIGINT'))
