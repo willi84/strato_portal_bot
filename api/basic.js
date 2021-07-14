@@ -7,15 +7,16 @@ const { Telegraf } = require('telegraf')
 // const bot = new Telegraf(process.env.TELEGRAM_TOKEN);
 
 module.exports = async function (req, res) {
-    console.log(Object.keys(req));
-    console.log(Object.keys(req.headers));
-    console.log(req.url);
-    console.log(req.headers.host);
-    console.log(req.headers['x-forwarded-host']);
-    console.log(req.headers['x-forwarded-port']);
+    var response = '';
+    response += '## req keys: ' + Object.keys(req).toString() ;
+    response +='## header keys: ' +  Object.keys(req.headers).toString();
+    response += '## URL: ' + req.url;
+    response += '## HOST: ' + req.headers.host;
+    response += '## x-forwarded-host: ' + req.headers['x-forwarded-host'];
+    response += '## x-forwarded-port: ' + req.headers['x-forwarded-port'];
 	try {
 // //     const baseUrl = `${req.headers.protocol}://${req.headers.host}:${req.headers.port}`;
-// 		res.send('OK: ') ;
+		res.send('OK: ' + response) ;
 // // 		res.statusCode = 200
 // // 		res.end('')
 	} catch (e) {
